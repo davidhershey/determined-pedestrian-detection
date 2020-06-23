@@ -12,7 +12,7 @@ min_validation_period: 1
 resources:
   slots_per_trial: 4
 searcher:
-  max_steps: 20
+  max_steps: 5
   metric: val_avg_iou
   name: single
   smaller_is_better: false
