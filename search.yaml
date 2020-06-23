@@ -1,13 +1,13 @@
-batches_per_step: 20
+batches_per_step: 5
 data:
   url: https://determined-ai-public-datasets.s3-us-west-2.amazonaws.com/PennFudanPed/PennFudanPed.zip
 description: hyperparameter_tuning
 entrypoint: model_def:ObjectDetectionModel
 hyperparameters:
-  global_batch_size: 4
+  global_batch_size: 16
   learning_rate:
     base: 10
-    maxval: -2
+    maxval: -1.5
     minval: -4
     type: log
   momentum:
@@ -17,7 +17,7 @@ hyperparameters:
   weight_decay: 0.0005
 min_validation_period: 1
 resources:
-  slots_per_trial: 2
+  slots_per_trial: 4
 searcher:
   max_steps: 20
   max_trials: 24
