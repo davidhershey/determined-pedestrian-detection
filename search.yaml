@@ -1,7 +1,7 @@
 batches_per_step: 5
 data:
   url: https://determined-ai-public-datasets.s3-us-west-2.amazonaws.com/PennFudanPed/PennFudanPed.zip
-description: hyperparameter_tuning
+description: pedestrian_detection_hp_search
 entrypoint: model_def:ObjectDetectionModel
 hyperparameters:
   global_batch_size: 16
@@ -19,8 +19,9 @@ min_validation_period: 1
 resources:
   slots_per_trial: 4
 searcher:
-  max_steps: 20
+  max_steps: 25
   max_trials: 24
   metric: val_avg_iou
   name: adaptive_simple
   smaller_is_better: false
+  mode: conservative
